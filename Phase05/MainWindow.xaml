@@ -1,0 +1,71 @@
+﻿<Window x:Class="Phase05.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Phase05"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="Background">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FFFAF9F9" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label x:Name="lblHeader" Content="Banking Program" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="40" Width="218" Cursor="AppStarting" FontWeight="Bold" FontSize="18" Foreground="#FFF4E9E9" FontStyle="Italic">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE62B2B" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <Button x:Name="btnAddAccount" HorizontalAlignment="Left" Height="59" Margin="19,148,0,0" VerticalAlignment="Top" Width="159" Content="Add Account" Click="btnAddAccount_Click"/>
+        <Button x:Name="btnSearchAccount" Content="Search For Account" HorizontalAlignment="Left" Height="55" Margin="19,253,0,0" VerticalAlignment="Top" Width="159" Click="btnSearchAccount_Click"/>
+        <Label x:Name="lblName" Content="Name of Account Holder:" HorizontalAlignment="Left" Height="32" Margin="291,82,0,0" VerticalAlignment="Top" Width="188" Background="White" Visibility="Hidden" IsEnabled="False"/>
+        <TextBox x:Name="txtBoxName" HorizontalAlignment="Left" Height="38" Margin="291,114,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="188" TextChanged="txtBoxName_TextChanged" Visibility="Hidden" IsEnabled="False"/>
+        <Label x:Name="lblAddress" Content="Address of Account Holder:" HorizontalAlignment="Left" Height="33" Margin="291,166,0,0" VerticalAlignment="Top" Width="188" Background="White" Visibility="Hidden" IsEnabled="False"/>
+        <TextBox x:Name="txtBoxAddress" HorizontalAlignment="Left" Height="37" Margin="291,0,0,0" TextWrapping="Wrap"  VerticalAlignment="Center" Width="188" TextChanged="txtBoxAddress1_TextChanged" Visibility="Hidden" IsEnabled="False"/>
+        <Label x:Name="lblType" Content="What type of Account:" HorizontalAlignment="Left" Height="33" Margin="291,247,0,0" VerticalAlignment="Top" Width="188" Background="White" Visibility="Hidden" IsEnabled="False"/>
+        <Label x:Name="lblAmount" Content="Dollar amount to start with:" HorizontalAlignment="Left" Height="33" Margin="291,333,0,0" VerticalAlignment="Top" Width="188" Background="White" Visibility="Hidden" IsEnabled="False"/>
+        <TextBox x:Name="txtBoxHowMuch" HorizontalAlignment="Left" Height="37" Margin="291,366,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" TextChanged="txtBoxHowMuch_TextChanged" Visibility="Hidden" IsEnabled="False"/>
+        <Button x:Name="btnBack" Content="Back" HorizontalAlignment="Left" Height="37" Margin="566,366,0,0" VerticalAlignment="Top" Width="100" Click="btnBack_Click" Visibility="Hidden" IsEnabled="False"/>
+        <Button x:Name="btnCreateAccount" Content="Create Account" HorizontalAlignment="Left" Height="37" Margin="671,366,0,0" VerticalAlignment="Top" Width="95" Click="btnCreateAccount_Click" Visibility="Hidden" IsEnabled="False"/>
+        <ComboBox x:Name="dropBoxType" HorizontalAlignment="Left" Margin="291,285,0,0" VerticalAlignment="Top" Width="188" Height="32" SelectionChanged="dropBoxType_SelectionChanged" Visibility="Hidden" IsEnabled="False">
+            <ComboBoxItem Content="Checking Account"/>
+            <ComboBoxItem Content="Saving Account"/>
+            <ComboBoxItem Content="CD Account"/>
+        </ComboBox>
+        <ListBox x:Name="lstBoxDisplay" HorizontalAlignment="Left" Height="263" Margin="570,97,0,0" VerticalAlignment="Top" Width="193"  />
+        <Label x:Name="lblAllAccounts" Content="Accounts" HorizontalAlignment="Left" Height="34" Margin="567,55,0,0" VerticalAlignment="Top" Width="196"  Background="White">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.747"/>
+                    <RotateTransform Angle="-0.207"/>
+                    <TranslateTransform Y="-1.187"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="lblEnterAccNumber" Content="Please Enter Account Number:" HorizontalAlignment="Left" Height="40" Margin="261,82,0,0" VerticalAlignment="Top" Width="179" Background="White" Visibility="Hidden" IsEnabled="False"/>
+        <Label x:Name="lblSelAccNum" Content="Current Account:" HorizontalAlignment="Left" Height="30" Margin="526,15,0,0" VerticalAlignment="Top" Width="104" Background="White" Visibility="Hidden" IsEnabled="False"/>
+        <TextBox x:Name="txtBoxSelAccNum" HorizontalAlignment="Left" Height="30" Margin="635,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" Visibility="Hidden" IsEnabled="False"/>
+        <Button x:Name="btnFindAccount" HorizontalAlignment="Left" Height="59" Margin="271,201,0,0" VerticalAlignment="Top" Width="159" Content="Find" Click="btnFindAccount_Click" Visibility="Hidden" IsEnabled="False" />
+        <TextBox x:Name="txtBoxEnterAccNumber" HorizontalAlignment="Left" Height="49" Margin="261,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" Visibility="Hidden" IsEnabled="False"/>
+        <Label x:Name="lblWhatOptions" Content="What Would You Like To Do?" HorizontalAlignment="Left" Height="55" Margin="209,102,0,0" VerticalAlignment="Top" Width="291" Background="White" Visibility="Hidden" IsEnabled="False"/>
+        <Button x:Name="btnWithdraw" Content="Withdraw" HorizontalAlignment="Left" Height="41" Margin="209,166,0,0" VerticalAlignment="Top" Width="132" Visibility="Hidden" IsEnabled="False" Click="btnWithdraw_Click"/>
+        <Button x:Name="btnDeposit" Content="Deposit" HorizontalAlignment="Left" Height="41" Margin="368,166,0,0" VerticalAlignment="Top" Width="132" Visibility="Hidden" IsEnabled="False" Click="btnDeposit_Click"/>
+        <Button x:Name="btnSwitch" Content="Switch Accounts" HorizontalAlignment="Left" Height="42" Margin="291,221,0,0" VerticalAlignment="Top" Width="132" Visibility="Hidden" IsEnabled="False" Click="btnSwitch_Click"/>
+        <Label x:Name="lblBalance" Content="Balance:" HorizontalAlignment="Left" Height="30" Margin="209,62,0,0" VerticalAlignment="Top" Width="66" Background="White" Visibility="Hidden" IsEnabled="False"/>
+        <TextBox x:Name="txtBoxBalance" HorizontalAlignment="Left" Height="30" Margin="280,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" Visibility="Hidden" IsEnabled="False"/>
+        <Label x:Name="lblWithdrawAmount" Content="How much would you like to withdraw?" HorizontalAlignment="Left" Height="44" Margin="209,122,0,0" VerticalAlignment="Top" Width="291" Background="White" Visibility="Hidden" IsEnabled="False"/>
+        <TextBox x:Name="txtBoxWithdrawAmount" HorizontalAlignment="Left" Height="50" Margin="209,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" Visibility="Hidden" IsEnabled="False"/>
+        <Button x:Name="btnWithdrawConfirm" Content="Confirm Withdrawl" HorizontalAlignment="Left" Height="48" Margin="280,251,0,0" VerticalAlignment="Top" Width="148" Visibility="hidden" IsEnabled="false" Click="btnWithdrawConfirm_Click"/>
+        <Label x:Name="lblDepositAmount" Content="How much would you like to deposit?" HorizontalAlignment="Left" Height="44" Margin="209,122,0,0" VerticalAlignment="Top" Width="291" Background="White" Visibility="Hidden" IsEnabled="False"/>
+        <TextBox x:Name="txtBoxDepositAmount" HorizontalAlignment="Left" Height="50" Margin="209,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="291" Visibility="Hidden" IsEnabled="False"/>
+        <Button x:Name="btnDepositConfirm" Content="Confirm Deposit" HorizontalAlignment="Left" Height="48" Margin="280,251,0,0" VerticalAlignment="Top" Width="148" Visibility="Hidden" IsEnabled="False" Click="btnDepositConfirm_Click"/>
+        
+
+    </Grid>
+</Window>
